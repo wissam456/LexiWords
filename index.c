@@ -101,11 +101,8 @@ Utilisateur* creer_utilisateur() {
             printf("Le nom ne peut pas être vide.\n");
             continue;
         }
-        if (trouver_utilisateur(user->nom)) {
-            printf("Ce nom est deja utilise. Veuillez en choisir un autre.\n");
-            continue;
-        }
-        break;
+
+        
     }
 
     printf("Votre prenom: ");
@@ -143,7 +140,7 @@ Utilisateur* creer_utilisateur() {
     ajouter_utilisateur(user);
     sauvegarder_utilisateurs();
 
-    printf("Compte cree avec succes !\n");
+    printf("Vous avez maintenant un compte  !\n");
     return user;
 }
 
@@ -165,7 +162,7 @@ Utilisateur* connexion_utilisateur() {
     fgets(mdp, sizeof(mdp), stdin);
     mdp[strcspn(mdp, "\n")] = 0;
     if (strcmp(mdp, user->mot_de_passe) == 0) {
-        printf("Bienvenue %s %s !\n", user->prenom, user->nom);
+        printf("content de te revoir %s %s !\n", user->prenom, user->nom);
         return user;
     } else {
         printf("Mot de passe incorrect.\n");
@@ -247,7 +244,7 @@ void sauvegarder_progression(Utilisateur *user) {
 
 void intro() {
     printf("              BIENVENUE DANS LEXIWORDS           \n\n");
-    printf("  Developpe par 'HAMI WISSAM' et 'IDIR CELINE'\n\n");
+    printf("  Developpe par 'HAMI WISSAM' et 'IDIR CELINE' et 'TAIRI CELINE'\n\n");
     printf("  Chaque bonne reponse rapporte 20 points. Tapez 'q' pour arreter le jeu.\n\n");
     printf("----------------------------------------------------------------------------------\n\n\n");
 }
