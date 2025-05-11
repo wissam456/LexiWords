@@ -65,7 +65,7 @@ void charger_utilisateurs() {
 }
 
 void sauvegarder_utilisateurs() {
-    FILE *f = fopen("users.dat", "wb");
+    FILE *f = fopen("user.dat", "wb");
     if (!f) return;
 
     Utilisateur *courant = liste_utilisateurs;
@@ -89,16 +89,16 @@ void liberer_utilisateurs() {
 Utilisateur* creer_utilisateur() {
     Utilisateur *user = malloc(sizeof(Utilisateur));
     if (!user) {
-        printf("Erreur d'allocation.\n");
+        printf("Erreur .\n");
         exit(1);
     }
     printf("Creation de compte:\n");
     while(1) {
-        printf("Votre nom (sans espaces): ");
+        printf("Votre nom : ");
         if (!fgets(user->nom, sizeof(user->nom), stdin)) continue;
         user->nom[strcspn(user->nom, "\n")] = 0;
         if (strlen(user->nom) == 0) {
-            printf("Le nom ne peut pas être vide.\n");
+            printf("Le nom ne peut pas Ãªtre vide.\n");
             continue;
         }
         if (trouver_utilisateur(user->nom)) {
